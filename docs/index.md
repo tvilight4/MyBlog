@@ -20,9 +20,7 @@
 ## Table of Contents
 
 - [About Project](#about-project)
-- [What is CppInterOp](#what-is-cppinterop)
 - [Motivation](#motivation-behind-using-cppinterop)
-- [Pre GSoC Period](#pre-gsoc-period)
 - [Summary Of Work Done](#summary-of-work-done)
 - [Contributions](#contributions)
 - [Future Plans](#future-plans)
@@ -30,3 +28,34 @@
 
 
 ## About Project
+To participate in the Neurobagel query federation, datasets must conform to Neurobagel’s data model, so annotating the datasets is necessary to harmonize them for query federation. The project aims to reduce the human effort to manually annotate individual data elements by automating the current annotation tool provided by Neurobagel using Large Language Models (LLMs). The tsv fies uploaded by the users get annotated by the LLMs to obtain the 'TermURLs' corresponding to each element , various other procesing is caried out once the term url is obtained and then the final json file with all the information of all thecolumns of the tsv file is obtained which can then be passed by a human.
+The project includes automating the annotation process using LLMs, then integrating the tool into the existing webpage and making changes in the UI accordingly.
+
+## Summary of Work Done
+In the first week of our project, the main objective was to process the input TSV file and achieve two outcomes:
+    Generate a dictionary with key value pairs representing column_header and a string of the column_header concatenated with the column entries.
+    Create a JSON file with column headers as keys and empty value fields, which would be populated further in the process.
+
+After completing the initial processing, we realized that the project should be divided into two main parts:
+    Parsing
+    Categorization
+
+My primary focus was on the categorization aspect for quit some time before I startedworking on the react UI..
+For categorization, I used open-source LLMs from Ollama and leveraged various tools from LangChain. The goal was to categorize columns (key-value pairs) into six categories:
+    Participant ID
+    Session ID
+    Age
+    Sex
+    Diagnosis
+    Assessment Tool
+The first milestone was successfully categorizing Participant ID, Session ID, Age, and Sex. Following this, we worked on categorizing Diagnosis and Assessment Tool.
+
+Prompt templates were extensively used and proved to be a critical component for the efficient functioning of the project. The prompt template for the first four categories included examples of inputs and how the LLM should respond. This approach worked well for the first four categories, but the LLM became confused when examples for Diagnosis and Assessment were included in the same prompt template. To address this, two additional prompt templates were created—one for identifying Diagnosis and the other for Assessments. These templates included descriptions of the respective categories and instructions to return a "yes" or "no," which was then used for categorization.
+
+The response from the LLM was of the type "AI_model_object," which needed to be converted into a string type for further processing as required by the parsing code to obtain the final result. The workflow of how a key-value pair is checked for its category is illustrated in the flowchart:
+
+
+
+Tests were written using pytest, and the LLM responses were mocked because GitHub cannot directly call Ollama. The Pydantic library was extensively used to validate the values returned at various steps, ensuring the format and data types were in accordance with the requirements.
+
+Once the Python script was fully functional, we developed a FastAPI service to run it, which was then integrated with a React frontend.
