@@ -33,8 +33,10 @@ The project includes automating the annotation process using LLMs, then integrat
 
 ## Summary of Work Done
 In the first week of our project, the main objective was to process the input TSV file and achieve two outcomes:
-    Generate a dictionary with key value pairs representing column_header and a string of the column_header concatenated with the column entries.
-    Create a JSON file with column headers as keys and empty value fields, which would be populated further in the process.
+
+    1)Generate a dictionary with key value pairs representing column_header and a string of the column_header concatenated with the column entries.
+
+    2)Create a JSON file with column headers as keys and empty value fields, which would be populated further in the process.
 
 After completing the initial processing, we realized that the project should be divided into two main parts:
     Parsing
@@ -42,17 +44,27 @@ After completing the initial processing, we realized that the project should be 
 
 My primary focus was on the categorization aspect for quit some time before I startedworking on the react UI..
 For categorization, I used open-source LLMs from Ollama and leveraged various tools from LangChain. The goal was to categorize columns (key-value pairs) into six categories:
-    Participant ID
-    Session ID
-    Age
-    Sex
-    Diagnosis
+
+    Participant ID,
+    Session ID,
+    Age,
+    Sex,
+    Diagnosis, and 
     Assessment Tool
 The first milestone was successfully categorizing Participant ID, Session ID, Age, and Sex. Following this, we worked on categorizing Diagnosis and Assessment Tool.
 
 Prompt templates were extensively used and proved to be a critical component for the efficient functioning of the project. The prompt template for the first four categories included examples of inputs and how the LLM should respond. This approach worked well for the first four categories, but the LLM became confused when examples for Diagnosis and Assessment were included in the same prompt template. To address this, two additional prompt templates were created—one for identifying Diagnosis and the other for Assessments. These templates included descriptions of the respective categories and instructions to return a "yes" or "no," which was then used for categorization.
 
+<div align="center">
+<img src="/assets/promptTemplate.png" alt="drawing" width="500"/>
+</div> 
+
+
 The response from the LLM was of the type "AI_model_object," which needed to be converted into a string type for further processing as required by the parsing code to obtain the final result. The workflow of how a key-value pair is checked for its category is illustrated in the flowchart:
+
+<div align="center">
+<img src="/assets/NB.drawio.png" alt="drawing" width="500"/>
+</div> 
 
 
 
