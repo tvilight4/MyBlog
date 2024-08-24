@@ -22,7 +22,7 @@
 - [About Project](#about-project)
 - [Motivation](#motivation-behind-using-cppinterop)
 - [Summary Of Work Done](#summary-of-work-done)
-- [Contributions](#contributions)
+- [Contributions (PRs)](#contributions)
 - [Future Plans](#future-plans)
 - [Conclusion](#conclusion)
 
@@ -59,3 +59,15 @@ The response from the LLM was of the type "AI_model_object," which needed to be 
 Tests were written using pytest, and the LLM responses were mocked because GitHub cannot directly call Ollama. The Pydantic library was extensively used to validate the values returned at various steps, ensuring the format and data types were in accordance with the requirements.
 
 Once the Python script was fully functional, we developed a FastAPI service to run it, which was then integrated with a React frontend.
+
+## Contributions
+
+### Pull Requests Issued
+
+- [Create raw json with column headers](https://github.com/neurobagel/annotation-tool-ai/pull/11)
+- [Categorization of Participant_id, Session_id](https://github.com/neurobagel/annotation-tool-ai/pull/26)
+- [Categorization of Age and Sex Columns](https://github.com/neurobagel/annotation-tool-ai/pull/30)
+- [Adding Readme(This was continuosly updated by us)](https://github.com/neurobagel/annotation-tool-ai/pull/35)
+- [Assessment Descriptions](https://github.com/neurobagel/annotation-tool-ai/pull/46)
+- [Diagnosis Levels with correct API response](https://github.com/neurobagel/annotation-tool-ai/pull/57)
+- [UI development](https://github.com/neurobagel/annotation-tool-ai/pull/60)
