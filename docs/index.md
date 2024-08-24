@@ -1,7 +1,7 @@
 # Final Evaluation Report for GSOC 2023
 
 <div align="center">
-<img src="https://user-images.githubusercontent.com/84740927/170821829-f631f5f7-c410-429a-acdc-d9cc81d13dd3.jpeg" alt="drawing" width="500"/>
+<img src="" alt="drawing" width="500"/>
 </div> 
 
 
