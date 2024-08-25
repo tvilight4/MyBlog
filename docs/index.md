@@ -80,7 +80,7 @@ The entire code was then dockerized.Once the Python script was fully functional,
 
 When we were done with a fully functional python script using gemma we also experimented with the OpenAI gpt4 model the key to which was provided by our organization for the purpose of studying and comparing the eficiencies of open source models and closed models.
 
-In order to understand how the columns were analysed for each individual category and how does the react UI aid in the diagnosis annotations click [here](page3.md).
+In order to understand the details of the entire codebase, how the columns were analysed for each individual category and how does the react UI aid in the diagnosis annotations click [here](page3.md).
 
 During the entire course of the project we documented our work and progress on hackmd.
 

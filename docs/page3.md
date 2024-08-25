@@ -1,1 +1,1 @@
-# Details of categorization for every category
+# Details of codebase and categorization for every category
