@@ -58,16 +58,12 @@ The first milestone was successfully categorizing Participant ID, Session ID, Ag
 
 Prompt templates were extensively used and proved to be a critical component for the efficient functioning of the project. The prompt template for the first four categories included examples of inputs and how the LLM should respond. This approach worked well for the first four categories, but the LLM became confused when examples for Diagnosis and Assessment were included in the same prompt template. To address this, two additional prompt templates were created—one for identifying Diagnosis and the other for Assessments. These templates included descriptions of the respective categories and instructions to return a "yes" or "no," which was then used for categorization.
 
-<div align="center">
-<img src="https://drive.google.com/uc?export=view&id=1yRDAsOETBYXmCdVUaLS_3YgddYD5WZ7B" alt="Prompt Template" width="500"/>
-</div>
+![image](docs/assets/promptTemplate.png)
 
 
 The response from the LLM was of the type "AI_model_object," which needed to be converted into a string type for further processing as required by the parsing code to obtain the final result. The workflow of how a key-value pair is checked for its category is illustrated in the flowchart:
 
-<div align="center">
-<img src="https://drive.google.com/uc?export=view&id=1v82_sGfTCHV_VfQifB_yd_Ya3RUWC2Vh" alt="Workflow" width="500"/>
-</div>
+![image](docs/assets/NB.drawio.png)
 
 
 
@@ -92,7 +88,7 @@ During the entire course of the project we documented our work and progress on [
 - [Diagnosis Levels with correct API response](https://github.com/neurobagel/annotation-tool-ai/pull/57)
 - [UI development](https://github.com/neurobagel/annotation-tool-ai/pull/60)
 
-## Code-That-Did-not-get-Merged
+## Code That Did not get Merged
 I had explored the use of vector stores for giving context to the llm using langchai to let the llm predict the full for of diagnosis levels and identify wether a column is diagnosis or an assessment tool, but the outputs were not very accurate and the prompt template approach proved to be efficient and hence that was used for the final product.
 
 Also our initial approach for diagnois was for the llm to predict the diagnosis levels' full form and then give the user an option to continue with it or replace it with a full form of their own choice from a droppable, in order to take a more pragmatic approach we decided to keep only the droppable and eliminate the step.
