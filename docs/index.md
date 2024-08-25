@@ -21,7 +21,6 @@
 ## Table of Contents
 
 - [About Project](#about-project)
-- [Motivation](#Motivation)
 - [Summary Of Work Done](#summary-of-work-done)
 - [Contributions (PRs)](#contributions)
 - [Code That Didnt merge](#code-that-did-not-get-merged)
@@ -32,8 +31,6 @@
 ## About Project
 To participate in the Neurobagel query federation, datasets must conform to Neurobagel’s data model, so annotating the datasets is necessary to harmonize them for query federation. The project aims to reduce the human effort to manually annotate individual data elements by automating the current annotation tool provided by Neurobagel using Large Language Models (LLMs). The tsv fies uploaded by the users get annotated by the LLMs to obtain the 'TermURLs' corresponding to each element , various other procesing is caried out once the term url is obtained and then the final json file with all the information of all thecolumns of the tsv file is obtained which can then be passed by a human.
 The project includes automating the annotation process using LLMs, then integrating the tool into the existing webpage and making changes in the UI accordingly.
-
-## Motivation
 
 ## Summary of Work Done
 In the first week of our project, the main objective was to process the input TSV file and achieve two outcomes:
@@ -85,7 +82,7 @@ The entire code was then dockerized.Once the Python script was fully functional,
 
 When we were done with a fully functional python script using gemma we also experimented with the OpenAI gpt4 model the key to which was provided by our organization for the purpose of studying and comparing the eficiencies of open source models and closed models.
 
-During the entire course of the project we documented our work and progress on [hackmd](https://hackmd.io/QymmEdIoTk-2g7-JNMq2lA#LLM-Utilisation--Annotation-Tool-AI-Documentation)
+During the entire course of the project we documented our work and progress on hackmd The content present in it can be found [here](page2.md).
 
 ## Contributions
 
