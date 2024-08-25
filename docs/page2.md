@@ -9,13 +9,6 @@ The codebase is created to categorize/classify the columns present in the tsv in
 The various tasks carried out by this codebase mainly utilise Langchain,
 the json library from python and the LLM 'Gemma' from Ollama.
 
-### Basic Workflow:
-
-In the main processing.py script the llm_invocation function is called for each individual pair of key value corresponding to a the column name and a string of column entries respectively. The decision making process which is followed for every input is as follows:
-![Copy of NB.drawio](https://hackmd.io/_uploads/Hk5poXfiA.png)
-
-
-
 
 ### Important Aspects:
 
@@ -89,6 +82,8 @@ The key value pairs which are not identified as "Participant_ID" "Session_ID" "A
 ![image](https://hackmd.io/_uploads/BkUCnQMsR.png)
 
 
+### Basic Workflow:
 
+In the main processing.py script the llm_invocation function is called for each individual pair of key value corresponding to a the column name and a string of column entries respectively. The decision making process which is followed for every input is as follows:
 
-
+![Copy of NB.drawio](https://hackmd.io/_uploads/Hk5poXfiA.png)

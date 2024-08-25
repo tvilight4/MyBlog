@@ -36,30 +36,23 @@ The project includes automating the annotation process using LLMs, then integrat
 
 In the first week of our project, the main objective was to process the input TSV file and achieve two outcomes:
 
-1)Generate a dictionary with key value pairs representing column_header and a string of the column_header concatenated with the column entries.
-
-2)Create a JSON file with column headers as keys and empty value fields, which would be populated further in the process.
+    1)Generate a dictionary with key value pairs representing column_header and a string of the column_header concatenated with the column entries.
+    2)Create a JSON file with column headers as keys and empty value fields, which would be populated further in the process.
 
 After completing the initial processing, we realized that the project should be divided into two main parts:
 
-Parsing
-
-Categorization
+    Parsing
+    Categorization
 
 My primary focus was on the categorization aspect for quit some time before I startedworking on the react UI..
 For categorization, I used open-source LLMs from Ollama and leveraged various tools from LangChain. The goal was to make the llm categorize columns (key-value pairs) into six categories:
 
-Participant ID
-
-Session ID
-
-Age
-
-Sex
-
-Diagnosis and 
-
-Assessment Tool
+    Participant ID
+    Session ID
+    Age
+    Sex
+    Diagnosis and 
+    Assessment Tool
 
 The first milestone was successfully categorizing Participant ID, Session ID, Age, and Sex. Following this, we worked on categorizing Diagnosis and Assessment Tool.
 
@@ -79,12 +72,16 @@ The response from the LLM was of the type "AI_model_object," which needed to be 
 
 
 
+
+
 Tests were written using pytest, and the LLM responses were mocked because GitHub cannot directly call Ollama. The Pydantic library was extensively used to validate the values returned at various steps, ensuring the format and data types were in accordance with the requirements.
 
 
 The entire code was then dockerized.Once the Python script was fully functional, we developed a FastAPI service to run it, which was then integrated with a React frontend. The react frontend plays a crucial role as the final json with only a single diagnois is created only when the user selects a specific diagnosis from the droppable provided by the UI.
 
 When we were done with a fully functional python script using gemma we also experimented with the OpenAI gpt4 model the key to which was provided by our organization for the purpose of studying and comparing the eficiencies of open source models and closed models.
+
+In order to understand how the columns were analysed for each individual category and how does the react UI aid in the diagnosis annotations click [here](page3.md).
 
 During the entire course of the project we documented our work and progress on hackmd.
 
