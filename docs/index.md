@@ -43,7 +43,7 @@ After completing the initial processing, we realized that the project should be 
     Parsing
     Categorization
 
-My primary focus was on the categorization aspect for quit some time before I startedworking on the react UI..
+As I was working with a colleuge on this project, we divided our work. My primary focus was on the categorization aspect for quit some time before I startedworking on the react UI..
 For categorization, I used open-source LLMs from Ollama and leveraged various tools from LangChain. The goal was to make the llm categorize columns (key-value pairs) into six categories:
 
     Participant ID
