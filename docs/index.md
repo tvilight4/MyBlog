@@ -13,8 +13,7 @@
 | Mentor | [Arman Jahanpour](https://github.com/rmanaem), [Sebastian Urchs](https://github.com/surchs),[Alyssa Dai](https://github.com/alyssadai),[Brent Mcpherson](), [Jean-Baptiste Poline ](https://github.com/jbpoline) |
 | Project | [LLM-assisted tool to annotate research data with machine-understandable, semantic data dictionaries](https://summerofcode.withgoogle.com/programs/2024/projects/RbOlafUP) |
 | GitHub | [annotation-tool-ai](https://github.com/neurobagel/annotation-tool-ai) |
-
-### Proposal Link :- [Proposal](https://drive.google.com/file/d/14q-lONhCMoZImAJuH0ZKCXXltvs84h4q/view?usp=sharing)
+|Proposal Link | [Proposal](https://drive.google.com/file/d/14q-lONhCMoZImAJuH0ZKCXXltvs84h4q/view?usp=sharing) |
 
 
 ## Table of Contents
@@ -28,7 +27,7 @@
 
 
 ## About Project
-To participate in the Neurobagel query federation, datasets must conform to Neurobagel’s data model, so annotating the datasets is necessary to harmonize them for query federation. The project aims to reduce the human effort to manually annotate individual data elements by automating the current annotation tool provided by Neurobagel using Large Language Models (LLMs). The tsv fies uploaded by the users get annotated by the LLMs to obtain the 'TermURLs' corresponding to each element , various other procesing is caried out once the term url is obtained and then the final json file with all the information of all thecolumns of the tsv file is obtained which can then be passed by a human.
+To participate in the [Neurobagel](https://neurobagel.org/) query federation, datasets must conform to Neurobagel’s data model, so annotating the datasets is necessary to harmonize them for query federation. The project aims to reduce the human effort to manually annotate individual data elements by automating the current [annotation tool](https://neurobagel.org/annotation_tool/) provided by Neurobagel using Large Language Models (LLMs). The tsv fies uploaded by the users get annotated by the LLMs to obtain the 'TermURLs' corresponding to each element , various other procesing is caried out once the term url is obtained and then the final json file with all the information of all thecolumns of the tsv file is obtained which can then be passed by a human.
 The project includes automating the annotation process using LLMs, then integrating the tool into the existing webpage and making changes in the UI accordingly.
 
 ## Summary of Work Done
@@ -106,7 +105,7 @@ Also our initial approach for diagnois was for the llm to predict the diagnosis 
 
 ## Future Plans
 
-- Enhance the UI more to include more flexiblity of usage for the users.
+- Enhance the UI more to include more flexiblity of usage for the users making it easy for the carrying out the human check and again updating the JSON file.
 - Integrate the React APP with the live annotation-tool
 - Work on increasing the accuracy of the llm by further enhancing the prompt templates.
 
