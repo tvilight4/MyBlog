@@ -20,6 +20,8 @@ The prompt template for classifying Participant_ID, Session_id, Age and Sex was 
 The prompt template for assessments and diagnosis included description of the respective tools and theprompt included a question for the llm to return a 'yes' or 'no' based on the reasoning if the key-value pairs fit the description.
 Based on the 'yes' and 'no' answer the code returned the termurl and orther required information after further processing.
 
+![Screenshot from 2024-08-25 23-17-38](https://github.com/user-attachments/assets/c7d3812c-43f0-4598-9fb6-18697ac87ea4)
+
 **Diagnosis Levels**
 
 The diagnosis levels were to be returned according to the full forms provided by the neurobagel api for the corresponding acronyms. But Each acronymn consisted of multiple full forms and just fetching the most probable full form would not always have been correct.So instead my colleuge prepared a json file which consisted of acronyms and their corresponding full forms from the existing Nuerobagel API. I converted that JSON file into a dictionary consistinf of key as the acronym and a list of corresping full forms as the value field as I noticed that the retrieval process while using the process dictionary was comparitively faster. So currently once a column is identified as diagnosis all the unique entries present in the column are listed down and then the full forms corresponding to each term is fetched from the dictionary. So the Output is of format:
@@ -36,6 +38,8 @@ The diagnosis levels were to be returned according to the full forms provided by
 ```
 
 The User then needs to select one of the listed full forms from the entire list via a droppable provided by the React UI and then a new updated JSON file is created with the single diagnosis selected by the user.
+
+![Screenshot from 2024-08-21 19-40-23](https://github.com/user-attachments/assets/8ffd3edc-1ed3-406a-ac09-a47052443178)
 
 
 **Test Code**
