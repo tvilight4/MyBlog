@@ -23,7 +23,7 @@
 - [Motivation](#Motivation)
 - [Summary Of Work Done](#summary-of-work-done)
 - [Contributions (PRs)](#contributions)
-- [Code That Didnt merge](#Code-That-Did-not-get-Merged)
+- [Code That Didnt merge](#code-that-did-not-get-merged)
 - [Future Plans](#future-plans)
 - [Conclusion](#conclusion)
 
@@ -58,12 +58,12 @@ The first milestone was successfully categorizing Participant ID, Session ID, Ag
 
 Prompt templates were extensively used and proved to be a critical component for the efficient functioning of the project. The prompt template for the first four categories included examples of inputs and how the LLM should respond. This approach worked well for the first four categories, but the LLM became confused when examples for Diagnosis and Assessment were included in the same prompt template. To address this, two additional prompt templates were created—one for identifying Diagnosis and the other for Assessments. These templates included descriptions of the respective categories and instructions to return a "yes" or "no," which was then used for categorization.
 
-![image](docs/assets/promptTemplate.png)
+![image](/assets/promptTemplate.png)
 
 
 The response from the LLM was of the type "AI_model_object," which needed to be converted into a string type for further processing as required by the parsing code to obtain the final result. The workflow of how a key-value pair is checked for its category is illustrated in the flowchart:
 
-![image](docs/assets/NB.drawio.png)
+![image](/assets/NB.drawio.png)
 
 
 
