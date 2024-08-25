@@ -10,7 +10,7 @@
 | --- | --- |
 | Name | [Tvisha Vedant](https://github.com/tvilight4) |
 | Organisation | [Neurobagel](https://neurobagel.org/), [INCF](https://www.incf.org/)  |
-| Mentor | [Arman Jahanpour](https://github.com/rmanaem), [Sebastian Urchs](https://github.com/surchs) ,[Alyssa Dai](https://github.com/alyssadai),[Brent Mcpherson]()  |
+| Mentor | [Arman Jahanpour](https://github.com/rmanaem), [Sebastian Urchs](https://github.com/surchs),[Alyssa Dai](https://github.com/alyssadai),[Brent Mcpherson](), [Jean-Baptiste Poline ](https://github.com/jbpoline) |
 | Project | [LLM-assisted tool to annotate research data with machine-understandable, semantic data dictionaries](https://summerofcode.withgoogle.com/programs/2024/projects/RbOlafUP) |
 | GitHub | [annotation-tool-ai](https://github.com/neurobagel/annotation-tool-ai) |
 
