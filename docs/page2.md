@@ -38,9 +38,12 @@ Even though we get to use  many LLMs like Flant-T5 for free on Hugging face it h
 
 Even though Llama models appeared to work fine at first, hallucination was detected when tested further 
 The attatched Screenshots show the LLM response in the interval of abt 10-20 seconds
+
 ![Hallucination](https://hackmd.io/_uploads/Bk9wR-ILR.png)
 
+
 ![Hallucination](https://hackmd.io/_uploads/SkMjCWIUR.png)
+
 
 3. Gemma Model
 The gemma model also from Ollama is working  fine with no visible hallucinations until now. And further tasks are being carried out using the Gemma model.
