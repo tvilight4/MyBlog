@@ -33,6 +33,7 @@ To participate in the Neurobagel query federation, datasets must conform to Neur
 The project includes automating the annotation process using LLMs, then integrating the tool into the existing webpage and making changes in the UI accordingly.
 
 ## Summary of Work Done
+
 In the first week of our project, the main objective was to process the input TSV file and achieve two outcomes:
 
 1)Generate a dictionary with key value pairs representing column_header and a string of the column_header concatenated with the column entries.
@@ -46,7 +47,7 @@ Parsing
 Categorization
 
 My primary focus was on the categorization aspect for quit some time before I startedworking on the react UI..
-For categorization, I used open-source LLMs from Ollama and leveraged various tools from LangChain. The goal was to categorize columns (key-value pairs) into six categories:
+For categorization, I used open-source LLMs from Ollama and leveraged various tools from LangChain. The goal was to make the llm categorize columns (key-value pairs) into six categories:
 
 Participant ID
 
@@ -61,6 +62,9 @@ Diagnosis and
 Assessment Tool
 
 The first milestone was successfully categorizing Participant ID, Session ID, Age, and Sex. Following this, we worked on categorizing Diagnosis and Assessment Tool.
+
+Working on the categorization part included selection of the optimum model by testing the responses given by various models,the optimum utilisation of the best possible tools from langchain etc
+The details of which can be found [here](page2.md).
 
 Prompt templates were extensively used and proved to be a critical component for the efficient functioning of the project. The prompt template for the first four categories included examples of inputs and how the LLM should respond. This approach worked well for the first four categories, but the LLM became confused when examples for Diagnosis and Assessment were included in the same prompt template. To address this, two additional prompt templates were created—one for identifying Diagnosis and the other for Assessments. These templates included descriptions of the respective categories and instructions to return a "yes" or "no," which was then used for categorization.
 
@@ -78,11 +82,11 @@ The response from the LLM was of the type "AI_model_object," which needed to be 
 Tests were written using pytest, and the LLM responses were mocked because GitHub cannot directly call Ollama. The Pydantic library was extensively used to validate the values returned at various steps, ensuring the format and data types were in accordance with the requirements.
 
 
-The entire code was then dockerized.Once the Python script was fully functional, we developed a FastAPI service to run it, which was then integrated with a React frontend.
+The entire code was then dockerized.Once the Python script was fully functional, we developed a FastAPI service to run it, which was then integrated with a React frontend. The react frontend plays a crucial role as the final json with only a single diagnois is created only when the user selects a specific diagnosis from the droppable provided by the UI.
 
 When we were done with a fully functional python script using gemma we also experimented with the OpenAI gpt4 model the key to which was provided by our organization for the purpose of studying and comparing the eficiencies of open source models and closed models.
 
-During the entire course of the project we documented our work and progress on hackmd The content present in it can be found [here](page2.md).
+During the entire course of the project we documented our work and progress on hackmd.
 
 ## Contributions
 
