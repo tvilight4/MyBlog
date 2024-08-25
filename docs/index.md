@@ -113,6 +113,8 @@ Also our initial approach for diagnois was for the llm to predict the diagnosis 
 
 It has been a very amazing experience for me, running into unforseen errors and then solving them, learning the entire software cycle of writing production level code, learning about pytest and dockers everything has helped me to gain new knowkedge and has developed my thought process in a way that will surely help me in my future endeavers. I am extremely grateful to my mentor **Arman Jahanpour, Sebastian Urchs, Alyssa Dai, Brent Mcpherson**, **Neurobagel** and **INCF** for allowing me to work on the project and for all of their guidance and support.The tips and suggestion given by them whenever I got stuck always proved to be really helpful for me to progress further in the project.The insights shared by them helped me develop a unique point of view to approach problems. I would also like to thank **Google** for providing such a great opportunity to all open source student developers across the globe.
 
+I am excited and look forward to contribute to Neurobagel and work with the organisation for any future endeavors!!
+
 **Thanks and Regards,**
 
 **Tvisha Vedant**
