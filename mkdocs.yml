@@ -23,7 +23,7 @@ theme:
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode    
-      primary: teal
+      primary: purple
       accent: lime
 
 plugins:
