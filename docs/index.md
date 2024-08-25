@@ -51,12 +51,18 @@ Categorization
 My primary focus was on the categorization aspect for quit some time before I startedworking on the react UI..
 For categorization, I used open-source LLMs from Ollama and leveraged various tools from LangChain. The goal was to categorize columns (key-value pairs) into six categories:
 
-Participant ID,
-Session ID,
-Age,
-Sex,
-Diagnosis, and 
+Participant ID
+
+Session ID
+
+Age
+
+Sex
+
+Diagnosis and 
+
 Assessment Tool
+
 The first milestone was successfully categorizing Participant ID, Session ID, Age, and Sex. Following this, we worked on categorizing Diagnosis and Assessment Tool.
 
 Prompt templates were extensively used and proved to be a critical component for the efficient functioning of the project. The prompt template for the first four categories included examples of inputs and how the LLM should respond. This approach worked well for the first four categories, but the LLM became confused when examples for Diagnosis and Assessment were included in the same prompt template. To address this, two additional prompt templates were created—one for identifying Diagnosis and the other for Assessments. These templates included descriptions of the respective categories and instructions to return a "yes" or "no," which was then used for categorization.
