@@ -82,7 +82,9 @@ When we were done with a fully functional python script using gemma we also expe
 
 In order to understand the details of the entire codebase, how the columns were analysed for each individual category and how does the react UI aid in the diagnosis annotations click [here](page3.md).
 
-During the entire course of the project we documented our work and progress on hackmd and kept on updating the Readme of our GitHub Repository
+During the entire course of the project we documented our work and progress on hackmd and kept on updating the Readme of our GitHub Repository.
+
+Towards the end of the project we had the opportunity to represent our project and work in front of the entire lab, show a live demo with the latest version of our tool and we also addressed the various questions regarding the tool we had developed.
 
 ## Contributions
 
