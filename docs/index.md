@@ -27,14 +27,17 @@
 
 
 ## About Project
-To participate in the [Neurobagel](https://neurobagel.org/) query federation, datasets must conform to Neurobagel’s data model, so annotating the datasets is necessary to harmonize them for query federation. The project aims to reduce the human effort to manually annotate individual data elements by automating the current [annotation tool](https://neurobagel.org/annotation_tool/) provided by Neurobagel using Large Language Models (LLMs). The tsv fies uploaded by the users get annotated by the LLMs to obtain the 'TermURLs' corresponding to each element , various other procesing is caried out once the term url is obtained and then the final json file with all the information of all thecolumns of the tsv file is obtained which can then be passed by a human.
-The project includes automating the annotation process using LLMs, then integrating the tool into the existing webpage and making changes in the UI accordingly.
+To participate in the [Neurobagel](https://neurobagel.org/) query federation, datasets must conform to Neurobagel’s data model, so annotating the datasets is necessary to harmonize them for query federation. The project aims to reduce the human effort required to manually annotate individual data elements by automating the current [annotation tool](https://neurobagel.org/annotation_tool/) tool provided by Neurobagel using Large Language Models (LLMs). The TSV files uploaded by the users get annotated by the LLMs to obtain the 'TermURLs' corresponding to each element, various other processing is carried out once the TermURL is obtained, and then the final JSON file with all the information of all the columns of the TSV file is generated, which can then be reviewed by a human.
+
+The project includes automating the annotation process using LLMs, integrating the tool into the existing webpage, and making changes in the UI accordingly.
+
 
 ## Summary of Work Done
 
 In the first week of our project, the main objective was to process the input TSV file and achieve two outcomes:
 
-    1)Generate a dictionary with key value pairs representing column_header and a string of the column_header concatenated with the column entries.
+    1)Generate a dictionary with key-value pairs representing column_header and a string of the column_header concatenated with the column entries.
+
     2)Create a JSON file with column headers as keys and empty value fields, which would be populated further in the process.
 
 After completing the initial processing, we realized that the project should be divided into two main parts:
@@ -42,8 +45,9 @@ After completing the initial processing, we realized that the project should be 
     Parsing
     Categorization
 
-As I was working with a colleuge on this project, we divided our work. My primary focus was on the categorization aspect for quit some time before I startedworking on the react UI..
-For categorization, I used open-source LLMs from Ollama and leveraged various tools from LangChain. The goal was to make the llm categorize columns (key-value pairs) into six categories:
+As I was working with a colleague on this project, we divided our work. My primary focus was on the categorization aspect for quite some time before I started working on the React UI.
+
+For categorization, I used open-source LLMs from Ollama and leveraged various tools from LangChain. The goal was to make the LLM categorize columns (key-value pairs) into six categories:
 
     Participant ID
     Session ID
@@ -54,8 +58,7 @@ For categorization, I used open-source LLMs from Ollama and leveraged various to
 
 The first milestone was successfully categorizing Participant ID, Session ID, Age, and Sex. Following this, we worked on categorizing Diagnosis and Assessment Tool.
 
-Working on the categorization part included selection of the optimum model by testing the responses given by various models,the optimum utilisation of the best possible tools from langchain etc
-The details of which can be found [here](page2.md).
+Working on the categorization part included the selection of the optimal model by testing the responses given by various models and the optimal utilization of the best possible tools from LangChain. The details of which can be found [here](page2.md).
 
 Prompt templates were extensively used and proved to be a critical component for the efficient functioning of the project. The prompt template for the first four categories included examples of inputs and how the LLM should respond. This approach worked well for the first four categories, but the LLM became confused when examples for Diagnosis and Assessment were included in the same prompt template. To address this, two additional prompt templates were created—one for identifying Diagnosis and the other for Assessments. These templates included descriptions of the respective categories and instructions to return a "yes" or "no," which was then used for categorization.
 
@@ -74,16 +77,15 @@ The response from the LLM was of the type "AI_model_object," which needed to be 
 
 Tests were written using pytest, and the LLM responses were mocked because GitHub cannot directly call Ollama. The Pydantic library was extensively used to validate the values returned at various steps, ensuring the format and data types were in accordance with the requirements.
 
+The entire code was then dockerized. Once the Python script was fully functional, we developed a FastAPI service to run it, which was then integrated with a React frontend. The React frontend plays a crucial role as the final JSON with only a single diagnosis is created only when the user selects a specific diagnosis from the dropdown provided by the UI.
 
-The entire code was then dockerized.Once the Python script was fully functional, we developed a FastAPI service to run it, which was then integrated with a React frontend. The react frontend plays a crucial role as the final json with only a single diagnois is created only when the user selects a specific diagnosis from the droppable provided by the UI.
+When we were done with a fully functional Python script using Gemma, we also experimented with the OpenAI GPT-4 model, the key to which was provided by our organization for the purpose of studying and comparing the efficiencies of open-source models and closed models.
 
-When we were done with a fully functional python script using gemma we also experimented with the OpenAI gpt4 model the key to which was provided by our organization for the purpose of studying and comparing the eficiencies of open source models and closed models.
+To understand the details of the entire codebase, how the columns were analyzed for each individual category, and how the React UI aids in the diagnosis annotations, click here.
 
-In order to understand the details of the entire codebase, how the columns were analysed for each individual category and how does the react UI aid in the diagnosis annotations click [here](page3.md).
+During the entire course of the project, we documented our work and progress on HackMD and continuously updated the README of our GitHub repository.
 
-During the entire course of the project we documented our work and progress on hackmd and kept on updating the Readme of our GitHub Repository.
-
-Towards the end of the project we had the opportunity to represent our project and work in front of the entire lab, show a live demo with the latest version of our tool and we also addressed the various questions regarding the tool we had developed.
+Towards the end of the project, we had the opportunity to present our project and work in front of the entire lab, show a live demo with the latest version of our tool, and address various questions regarding the tool we developed.
 
 ## Contributions
 
@@ -98,22 +100,22 @@ Towards the end of the project we had the opportunity to represent our project a
 - [UI development](https://github.com/neurobagel/annotation-tool-ai/pull/60)
 
 ## Code That Did not get Merged
-I had explored the use of vector stores for giving context to the llm using langchai to let the llm predict the full for of diagnosis levels and identify wether a column is diagnosis or an assessment tool, but the outputs were not very accurate and the prompt template approach proved to be efficient and hence that was used for the final product.
+I had explored the use of vector stores for giving context to the LLM using LangChain to let the LLM predict the full form of diagnosis levels and identify whether a column is a diagnosis or an assessment tool, but the outputs were not very accurate, and the prompt template approach proved to be more efficient, so that was used for the final product.
 
-Also our initial approach for diagnois was for the llm to predict the diagnosis levels' full form and then give the user an option to continue with it or replace it with a full form of their own choice from a droppable, in order to take a more pragmatic approach we decided to keep only the droppable and eliminate the step.
+Also, our initial approach for diagnosis was for the LLM to predict the diagnosis levels' full form and then give the user an option to continue with it or replace it with a full form of their own choice from a dropdown. However, in order to take a more pragmatic approach, we decided to keep only the dropdown and eliminate that step.
 
 
 ## Future Plans
 
-- Enhance the UI more to include more flexiblity of usage for the users making it easy for the carrying out the human check and again updating the JSON file.
-- Integrate the React APP with the live annotation-tool
-- Work on increasing the accuracy of the llm by further enhancing the prompt templates.
+- Enhance the UI further to include more flexibility of usage for users, making it easier for carrying out the human check and updating the JSON file.
+- Integrate the React app with the live annotation tool.
+- Work on increasing the accuracy of the LLM by further enhancing the prompt templates.
 
 ## Conclusion
 
-It has been a very amazing experience for me, running into unforseen errors and then solving them, learning the entire software cycle of writing production level code, learning about pytest and dockers everything has helped me to gain new knowkedge and has developed my thought process in a way that will surely help me in my future endeavers. I am extremely grateful to my mentor **Arman Jahanpour, Sebastian Urchs, Alyssa Dai, Brent Mcpherson**, **Neurobagel** and **INCF** for allowing me to work on the project and for all of their guidance and support.The tips and suggestion given by them whenever I got stuck always proved to be really helpful for me to progress further in the project.The insights shared by them helped me develop a unique point of view to approach problems. I would also like to thank **Google** for providing such a great opportunity to all open source student developers across the globe.
+It has been an amazing experience for me, running into unforeseen errors and then solving them, learning the entire software cycle of writing production-level code, and learning about pytest and Docker. Everything has helped me gain new knowledge and developed my thought process in a way that will surely help me in my future endeavors. I am extremely grateful to my mentor **Arman Jahanpour**, **Sebastian Urchs**, **Alyssa Dai**, **Brent McPherson**, **Neurobagel**, and **INCF** for allowing me to work on the project and for all of their guidance and support. The tips and suggestions given by them whenever I got stuck always proved to be really helpful for me to progress further in the project. The insights shared by them helped me develop a unique point of view to approach problems. I would also like to thank Google for providing such a great opportunity to all open-source student developers across the globe.
 
-I am excited and look forward to contribute to Neurobagel and work with the organisation for any future endeavors!!
+I am excited and look forward to contributing to Neurobagel and working with the organization on any future endeavors!!
 
 **Thanks and Regards,**
 
