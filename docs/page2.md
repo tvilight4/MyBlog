@@ -106,4 +106,5 @@ The key-value pairs that are not identified as "Participant_ID", "Session_ID", "
 
 In the main processing.py script, the llm_invocation function is called for each individual pair of key-value corresponding to a column name and a string of column entries, respectively. The decision-making process followed for every input is as follows:
 
-![Copy of NB.drawio](https://hackmd.io/_uploads/Hk5poXfiA.png)
+![Copy of NB drawio](https://github.com/user-attachments/assets/92174fff-4230-40bd-9c35-033e6b5cb732)
+
