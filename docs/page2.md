@@ -30,7 +30,10 @@ Even though many LLMs like Flan-T5 are available for free on Hugging Face, it ha
 
 Even though Llama models appeared to work fine at first, hallucination was detected when tested further. The attached screenshots show the LLM response in the interval of about 10-20 seconds.
 
+
 ![Hallucination](https://hackmd.io/_uploads/Bk9wR-ILR.png)
+
+
 
 ![Hallucination](https://hackmd.io/_uploads/SkMjCWIUR.png)
 
@@ -53,7 +56,9 @@ Utilizing LangChain’s components like PromptTemplate, ChatOllama, and implemen
 
 Here, the PromptTemplate specifies the input examples for the LLM to base its response on and the form in which the output is expected. It also separately defines the input variables that will be given to the LLM.
 
+
 ![image](https://hackmd.io/_uploads/S1UAGGUUA.png)
+
 
 2. Chatollama
 
@@ -69,6 +74,7 @@ In LangChain, the concept of chains refers to a sequence or pipeline of operatio
  
  ![image](https://hackmd.io/_uploads/ByIn4MILC.png)
 
+
 ### 3. Obtaining the Output in the req format to pass it on to the parser
 
 This depends on the type of values present in the column, i.e., categorical, defined numeric indices, continuous, etc.
@@ -81,6 +87,7 @@ The key-value pairs that are not identified as "Participant_ID", "Session_ID", "
 
 
 ![image](https://hackmd.io/_uploads/BkUCnQMsR.png)
+
 
 
 ### Basic Workflow:
